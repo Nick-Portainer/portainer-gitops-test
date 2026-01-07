@@ -1,0 +1,9 @@
+services:
+  webserver:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./access-lists:/etc/nginx/access-lists
+      - ./network_internal.conf:/etc/nginx/network_internal.conf:ro
+    restart: always
